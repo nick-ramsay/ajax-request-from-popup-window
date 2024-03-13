@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Out Window</title>
+</head>
+<body>
+    <h2>Popup</h2>
+    <body>
+        <button onclick="makeAjaxRequest()">Call API via Ajax</button>
+        <div id="ajaxResponseBody" style="margin-top: 10px;">No response</div>
+        <script>
+            const makeAjaxRequest = () => {
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function () {
+                    document.getElementById("ajaxResponseBody").innerHTML =
+                        this.responseText;
+                }
+                xhttp.open("GET", "https://dummyjson.com/products/1");
+                xhttp.send();
+            }
+            const openPopupWindow = () => {
+                window.open ("./popup.html", "Window","status=1,toolbar=1,width=500,height=300,resizable=yes");
+            }
+        </script>
+    </body>
+</body>
+</html>

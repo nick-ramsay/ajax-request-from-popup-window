@@ -27,8 +27,10 @@
 </head>
 
 <body>
+    <h2>Home</h2>
     <button onclick="makeAjaxRequest()">Call API via Ajax</button>
-    <div id="ajaxResponseBody">No response</div>
+    <button onclick="openPopupWindow()">Open Pop Out Browser Window</button>
+    <div id="ajaxResponseBody" style="margin-top: 10px;">No response</div>
     <script>
         const makeAjaxRequest = () => {
             const xhttp = new XMLHttpRequest();
@@ -38,6 +40,9 @@
             }
             xhttp.open("GET", "https://dummyjson.com/products/1");
             xhttp.send();
+        }
+        const openPopupWindow = () => {
+            window.open ("./popup.html", "Window","status=1,toolbar=1,width=500,height=300,resizable=yes");
         }
     </script>
 </body>
